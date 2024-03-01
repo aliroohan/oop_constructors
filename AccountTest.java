@@ -5,35 +5,35 @@ class Account{
     private int age;
     private double balance;
 
-    private String getAccountid() {
+    public String getAccountid() {
         return accountid;
     }
 
-    private void setAccountid(String accountid) {
+    public void setAccountid(String accountid) {
         this.accountid = accountid;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
-    private void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    private String getCNIC() {
+    public String getCNIC() {
         return CNIC;
     }
 
-    private void setCNIC(String CNIC) {
+    public void setCNIC(String CNIC) {
         this.CNIC = CNIC;
     }
 
-    private int getAge() {
+    public int getAge() {
         return age;
     }
 
-    private void setAge(int age) {
+    public void setAge(int age) {
         if (age > 35)
             setBalance(0);
         else if (age > 30)
@@ -47,7 +47,7 @@ class Account{
         this.age = age;
     }
 
-    private double getBalance() {
+    public double getBalance() {
         return balance;
     }
 
@@ -66,7 +66,27 @@ class Account{
         setCNIC(CNIC);
         setAge(age);
     }
+
+    public void deposit(double amount)
+    {
+        if (amount < 0)
+            System.out.println("Invalid Amount");
+        else
+            setBalance(getBalance() + amount);
+    }
+
+    public void withdraw(double amount)
+    {
+        if (getBalance() - amount < 0)
+            System.out.println("Insufficient Balance");
+        else
+            setBalance(getBalance() - amount);
+    }
 }
 public class AccountTest {
+    public static void main(String[] args) {
+        Account a1 = new Account("12345");
+
+    }
     
 }
