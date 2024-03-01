@@ -86,6 +86,13 @@ class Account{
 public class AccountTest {
     public static void main(String[] args) {
         Account a1 = new Account("12345");
+        Account a2 = new Account("Ali","12345-1234567-1",25);
+        a2.deposit(10000);
+        a2.withdraw(6000);
+        a1.deposit(50000);
+        System.out.println(a1.getBalance());
+        System.out.println(a2.getBalance());
+        
 
     }
     
